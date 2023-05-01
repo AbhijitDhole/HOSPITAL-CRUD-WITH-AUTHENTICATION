@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+        <title>SHOW PATIENTS</title>
+{% endblock %}
+
+{% block content %}
+        <h3 class="text-center">SHOW PATIENTS</h3>
+        <table class="table table-striped table-dark">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">NAME</th>
+                <th scope="col">AGE</th>
+                <th scope="col">GENDER</th>
+                <th scope="col">DOB</th>
+                <th scope="col">PHONE</th>
+
+
+              </tr>
+            </thead>
+            <tbody>
+                {% for i in obj %}
+              <tr>
+                <td>{{i.p_id}}</td>
+                <td>{{i.p_name}}</td>
+                <td>{{i.p_age}}</td>
+                <td>{{i.p_gender}}</td>
+                <td>{{i.p_dob}}</td>
+                <td>{{i.p_phone}}</td>
+                <td><button type="button" class="btn btn-warning"><a href="{% url 'updatepatient_url'  i.id%}">UPDATE</a></button></td>
+                <td><button type="button" class="btn btn-danger"><a href="{% url 'deletepatient_url' i.id %}">DELETE</a></button></td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        
+{% endblock %}

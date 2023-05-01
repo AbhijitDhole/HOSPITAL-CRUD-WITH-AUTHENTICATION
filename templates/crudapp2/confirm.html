@@ -1,0 +1,18 @@
+{% extends 'base.html' %} 
+
+{% block title %}
+    <title>Confimation Page</title>
+{% endblock %}
+
+{% block content %}
+<center>
+<div class="container">
+    <form method = "post">
+        {% csrf_token %}
+        <h3>DO YOU REALLY WANT TO DELETE THIS DATA?</h3>
+        <input type="submit" value = "YES" class= "btn btn-danger">
+        <button type="button" class="btn btn-warning"><a href="{% url 'showpatient_url' %}">NO</a></button>
+    </form>
+</div>
+</center>
+{% endblock %}

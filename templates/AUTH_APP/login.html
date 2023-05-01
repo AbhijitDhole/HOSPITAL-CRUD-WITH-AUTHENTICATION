@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>LOGIN PAGE</title>
+{% endblock %}
+
+{%  block content %}
+
+<div class="container">
+    <form method= "post">
+        {% csrf_token %}
+        <h3 class="text-center" >LOGIN PAGE</h3>
+        <br><br>
+        <label for="un"><b>USERNAME:</b></label>
+        <input type="text" id= "un" name="un" class="form-control">
+        <br>
+        <label for="pw"><b>PASSWORD:</b></label>
+        <input type="text" id= "pw" name="pw" class="form-control">
+        <br><br>
+        <center>
+        <input type="submit" value="LOGIN" class= "btn btn-success btn-lg">
+        </center>
+    </form>
+</div>
+
+
+{% endblock %}
