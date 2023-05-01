@@ -14,3 +14,6 @@ class PatientForm(forms.ModelForm):
             'p_phone':'PHONE NUMBER',
             
         }
+        widgets = {
+            'p_dob': forms.DateInput(attrs ={'type':'date'})
+        }
